@@ -58,4 +58,4 @@ if __name__ == "__main__":
     subprocess.run(['git', 'config', '--local', 'user.name', "GitHub Action"])
     subprocess.run(['git', 'add', '.'])
     subprocess.run(['git', 'commit', '-m', 'New Songs - ' + subprocess.check_output(['date']).decode('utf-8').strip()])
-    subprocess.run(['git', 'push', '-f', 'origin', 'master'])
+    subprocess.run(['git', 'push', '-f', 'origin', 'main'])
