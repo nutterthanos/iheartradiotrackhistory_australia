@@ -18,10 +18,10 @@ jobs:
           chmod 777 ./
           chmod 777 ./* 
 
-      - name: Run custom shell script
+      - name: Run custom python script
         run: |
-          chmod +x track_history.sh  # Make the script executable if needed
-          ./track_history.sh  # Replace with the name of your script
+          chmod +x track_history.py  # Make the script executable if needed
+          python track_history.py  # Replace with the name of your script
 
       - name: Complete workflow
         run: echo "Script execution complete!"
