@@ -2,7 +2,7 @@ name: IHeartMusic Track History Recorder
 
 on:
   schedule:
-    - cron: '*/1440 * * * *'  # Run the script once an day
+    - cron: '0 0 * * *'  # Run the script once an day
   workflow_dispatch:
 
 jobs:
