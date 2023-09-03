@@ -13,6 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Pip install
+        run: |
+          pip3 install asyncio aiohttp aiofiles logging json hashlib subprocess
+
       - name: chmod
         run: | 
           chmod 777 ./
