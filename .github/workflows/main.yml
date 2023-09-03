@@ -1,0 +1,27 @@
+name: IHeartMusic Track History Recorder
+
+on:
+  schedule:
+    - cron: '*/60 * * * *'  # Run the script every 1 Hour
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # You can choose a different runner if needed
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: chmod
+        run: | 
+          chmod 777 ./
+          chmod 777 ./* 
+
+      - name: Run custom shell script
+        run: |
+          chmod +x track_history.sh  # Make the script executable if needed
+          ./track_history.sh  # Replace with the name of your script
+
+      - name: Complete workflow
+        run: echo "Script execution complete!"
