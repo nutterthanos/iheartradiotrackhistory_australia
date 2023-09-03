@@ -55,5 +55,4 @@ if __name__ == "__main__":
 
     # After downloads are completed, run Git commands to add and commit
     subprocess.run(['git', 'add', '.'])
-    subprocess.run(['git', 'add', '.'])
     subprocess.run(['git', 'commit', '-m', 'New Songs'])
