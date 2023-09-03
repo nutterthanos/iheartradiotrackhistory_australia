@@ -44,7 +44,7 @@ async def download_track_history(sem: asyncio.Semaphore, station_id: int) -> Non
 
 # Example usage:
 async def main(station_ids):
-    semaphore = asyncio.Semaphore(100)  # Limit concurrent downloads to 5 (adjust as needed)
+    semaphore = asyncio.Semaphore(20)  # Limit concurrent downloads to 5 (adjust as needed)
 
     tasks = [download_track_history(semaphore, station_id) for station_id in station_ids]
     await asyncio.gather(*tasks)
