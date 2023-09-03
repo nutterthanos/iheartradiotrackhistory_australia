@@ -54,5 +54,8 @@ if __name__ == "__main__":
     asyncio.run(main(station_ids))
 
     # After downloads are completed, run Git commands to add and commit
+    subprocess.run(['git', 'config', '--local', 'user.email', "action@github.com"])
+    subprocess.run(['git', 'config', '--local', 'user.name', "GitHub Action"])
     subprocess.run(['git', 'add', '.'])
-    subprocess.run(['git', 'commit', '-m', 'New Songs'])
+    subprocess.run(['git', 'commit', '-m', 'New Songs - "`date`"'])
+    subprocess.run(['git', 'push', '-f', 'origin', 'master'])
