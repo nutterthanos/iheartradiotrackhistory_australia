@@ -15,7 +15,7 @@ jobs:
 
       - name: Pip install
         run: |
-          pip3 install asyncio aiohttp aiofiles json hashlib subprocess
+          pip3 install asyncio aiohttp aiofiles
 
       - name: chmod
         run: | 
