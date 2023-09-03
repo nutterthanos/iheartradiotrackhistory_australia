@@ -26,11 +26,13 @@ async def download_track_history(sem: asyncio.Semaphore, station_id: int) -> Non
                                 await f.write(track_history)
                             logging.info(f"Download for Station ID: {station_id} completed")
 
-                            # Calculate and save SHA-1 hash
+                            # Calculate SHA-1 hash
                             sha1_hash = hashlib.sha1(track_history.encode('utf-8')).hexdigest()
                             sha1_filename = f"{station_id}.sha1"
+
+                            # Save SHA-1 hash and filename with station ID
                             async with aiofiles.open(sha1_filename, "w", encoding='utf-8') as sha1_file:
-                                await sha1_file.write(sha1_hash)
+                                await sha1_file.write(f"{sha1_hash} *{filename}")
                             logging.info(f"SHA-1 hash for Station ID: {station_id} saved")
                             
                         else:
